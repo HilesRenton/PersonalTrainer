@@ -6,6 +6,7 @@ import Traininglist from './components/Traininglist'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import TrainingCalendar from './components/TrainingCalendar';
 
 function App() {
   return (
@@ -19,17 +20,17 @@ function App() {
       </AppBar>
      
       <BrowserRouter>
-      <div style ={{margin: 50}}>
+      <div style ={{margin: 25}}>
       
         <Link to ="/" style= {{margin: 50, fontSize: 30}} >Trainings</Link>{' '}
         <Link to="/customers" style= {{margin: 50, fontSize: 30}}>Customers</Link>{' '}
-        
+        <Link to="/trainingcalendar" style= {{margin: 50, fontSize: 30}}>Calendar</Link>{' '}
         <Switch>
           
 
           <Route exact path = "/" component = {Traininglist}/>
           <Route path = "/customers" component = {Customerlist}/>
-          
+          <Route path = "/trainingcalendar" component = {TrainingCalendar}/>
           <Route render={() => <h1>Page not found</h1>}/>
 
 

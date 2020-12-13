@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 
 export default function Traininglist() {
         const [trainings, setTrainings] = useState([]) ;
-
+      
         useEffect(() => fetchData() , []);
 
         const fetchData = () => {
@@ -36,6 +36,7 @@ export default function Traininglist() {
             .then(res => fetchData())
             .catch(err => console.error(err))
             }
+            
         }
 
         const columns =[
