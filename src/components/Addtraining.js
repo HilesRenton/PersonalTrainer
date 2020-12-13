@@ -13,7 +13,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function Addtraining(props){
     const [open, setOpen] = React.useState(false);
-    const [customer, setCustomer] = React.useState('',[])
+    const [customer, setCustomer] = React.useState([])
 
     const [training, setTraining] = React.useState({
        date: '', activity: '', duration: '', customer: ''
@@ -33,7 +33,7 @@ useEffect(() => handleDateChange(startDate), [startDate])
       
     }
 
-    useEffect(() => setCustomer(customers[0]), [])
+    
 
 
     const handleClickOpen = () => {
@@ -48,7 +48,7 @@ useEffect(() => handleDateChange(startDate), [startDate])
   
 const handleInputChange = (e) => {
     setTraining({...training, [e.target.name]: e.target.value})
-    console.log(customer)
+    
 }
 
 const addTraining = () => {
@@ -58,11 +58,9 @@ const addTraining = () => {
 }
  const handleChange = (c) => {
     setCustomer(c.target.value)
-    console.log(customer)
-    console.log(training)
-    setTraining({...training, customer: customer.links[0].href})
-    console.log(customer)
-    console.log(training)
+    
+    setTraining({...training, customer: customer.links[1].href})
+    
     
  }
  
